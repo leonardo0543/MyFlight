@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">MyFlight</string>
+    <string name="app_name">My Flight</string>
+    <string name="tittle_activity_referencia">ReferenciaActivity</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+
 </resources>
