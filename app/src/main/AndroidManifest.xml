@@ -21,7 +21,7 @@
         <activity android:name=".view.CreateAccountActivity" />
         <activity
             android:name=".ReferenciaActivity"
-            android:label="@string/title_activity_referencia"
+            android:label="@string/tittle_activity_referencia"
             android:theme="@style/AppTheme"></activity>
     </application>
 
