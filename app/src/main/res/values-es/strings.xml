@@ -5,5 +5,7 @@
     <string name="hint_email">Correo</string>
     <string name="hint_password">Contraseña</string>
     <string name="text_button_login">Ingresar</string>
+    <string name="dont_have_account">Estás registrado? </string>
+    <string name="create_here">Crear cuenta</string>
 
 </resources>
