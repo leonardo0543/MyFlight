@@ -9,5 +9,6 @@
     <string name="hint_name">Name</string>
     <string name="hint_confirm_password">Confirm password</string>
     <string name="text_button_register">Register</string>
+    <string name="toolbar_tittle_create_account">Create account</string>
 
 </resources>
