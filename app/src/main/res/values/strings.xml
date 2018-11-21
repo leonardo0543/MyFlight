@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">My Flight</string>
     <string name="tittle_activity_referencia">ReferenciaActivity</string>
+    <string name="tittle_activity_create_account">CreateAccountActivity</string>
     <string name="hint_email">Email</string>
     <string name="hint_password">Password</string>
     <string name="text_button_login">Login</string>
@@ -10,5 +11,6 @@
     <string name="hint_confirm_password">Confirm password</string>
     <string name="text_button_register">Register</string>
     <string name="toolbar_tittle_create_account">Create account</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>
