@@ -6,5 +6,8 @@
     <string name="text_button_login">Login</string>
     <string name="dont_have_account">Already registered? </string>
     <string name="create_here">Create account</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_confirm_password">Confirm password</string>
+    <string name="text_button_register">Register</string>
 
 </resources>
