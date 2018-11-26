@@ -1,12 +1,10 @@
 package com.utnproject.myflight.view;
 
-import android.annotation.SuppressLint;
-
-
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.utnproject.myflight.R;
 
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
 public class CreateAccountActivity extends AppCompatActivity {
 
@@ -18,7 +16,7 @@ public class CreateAccountActivity extends AppCompatActivity {
     }
 
      public void showToolbar(String tittle, boolean upButton){
-         android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
+         Toolbar toolbar = findViewById(R.id.toolbar);
          setSupportActionBar(toolbar);
          getSupportActionBar().setTitle(tittle);
          getSupportActionBar().setDisplayHomeAsUpEnabled(upButton);

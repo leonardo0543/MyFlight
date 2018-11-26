@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".view.CreateAccountActivity">
 
-    <include layout="@layout/actionbar_toolbar"/>
 
 <fragment xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
