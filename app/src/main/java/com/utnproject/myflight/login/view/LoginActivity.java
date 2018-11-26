@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 
 import com.utnproject.myflight.R;
+import com.utnproject.myflight.login.presenter.LoginPresenter;
+import com.utnproject.myflight.login.presenter.LoginPresenterImpl;
 import com.utnproject.myflight.view.CreateAccountActivity;
 import com.utnproject.myflight.view.MapsActivity;
 
@@ -21,6 +23,8 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     private Button login;
     private ProgressBar progressBarLogin;
 
+    private LoginPresenter presenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +34,16 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
         password = (TextInputEditText) findViewById(R.id.password);
         login = (Button) findViewById(R.id.login);
         progressBarLogin =(ProgressBar) findViewById(R.id.progressBarLogin);
+
+        presenter = new LoginPresenterImpl(this);
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //validaciones
+                presenter.singIn(username.getText().toString(), password.getText().toString());
+            }
+        });
 
     }
 
