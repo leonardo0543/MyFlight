@@ -12,5 +12,6 @@
     <string name="text_button_register">Register</string>
     <string name="toolbar_tittle_create_account">Create account</string>
     <string name="title_activity_maps">Map</string>
+    <string name="login_error">something happens</string>
 
 </resources>

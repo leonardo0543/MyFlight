@@ -13,5 +13,5 @@ public interface LoginView {
     void loginError(String error);
 
      void goCreateAccount(View view);
-     void goHome(View view);
+     void goHome();
 }

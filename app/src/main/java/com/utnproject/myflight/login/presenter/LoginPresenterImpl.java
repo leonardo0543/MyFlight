@@ -4,7 +4,7 @@ import com.utnproject.myflight.login.interactor.LoginInteractor;
 import com.utnproject.myflight.login.interactor.LoginInteractorImpl;
 import com.utnproject.myflight.login.view.LoginView;
 
-public class LoginPresenterImpl implements LoginPresenter {
+public class LoginPresenterImpl implements LoginPresenter{
 
     private LoginView loginView;
     private LoginInteractor interactor;
@@ -16,16 +16,24 @@ public class LoginPresenterImpl implements LoginPresenter {
 
     @Override
     public void singIn(String username, String password) {
+        loginView.disableInputs();
+        loginView.showProgressBar();
         interactor.singIn(username,password);
+
     }
 
     @Override
     public void loginSuccess() {
-
+        loginView.goHome();
+        loginView.hideProgressBar();
     }
 
     @Override
-    public void loginError() {
-
+    public void loginError(String error) {
+        loginView.enableInputs();
+        loginView.hideProgressBar();
+        loginView.loginError(error);
     }
+
+
 }
