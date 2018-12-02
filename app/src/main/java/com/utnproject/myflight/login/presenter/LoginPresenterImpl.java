@@ -1,5 +1,8 @@
 package com.utnproject.myflight.login.presenter;
 
+import android.app.Activity;
+
+import com.google.firebase.auth.FirebaseAuth;
 import com.utnproject.myflight.login.interactor.LoginInteractor;
 import com.utnproject.myflight.login.interactor.LoginInteractorImpl;
 import com.utnproject.myflight.login.view.LoginView;
@@ -15,12 +18,14 @@ public class LoginPresenterImpl implements LoginPresenter{
     }
 
     @Override
-    public void singIn(String username, String password) {
+
+    public void singIn(String username, String password, Activity activity, FirebaseAuth firebaseAuth) {
         loginView.disableInputs();
         loginView.showProgressBar();
-        interactor.singIn(username,password);
+        interactor.singIn(username,password, activity, firebaseAuth);
 
     }
+
 
     @Override
     public void loginSuccess() {
@@ -34,6 +39,7 @@ public class LoginPresenterImpl implements LoginPresenter{
         loginView.hideProgressBar();
         loginView.loginError(error);
     }
+
 
 
 }
