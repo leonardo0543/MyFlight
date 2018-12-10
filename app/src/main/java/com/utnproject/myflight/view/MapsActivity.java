@@ -53,7 +53,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private String AplicationID = "4e2ca9a8";
     private String AplicationKey= "4693b521dd220c969d65a913481052e9";
 
-    public static ArrayList<String> flightList;
+    public ArrayList<String> flightList;
 
 
     @Override
@@ -70,7 +70,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         showToolbar(getResources().getString(R.string.toolbar_tittle_home),false);
 
-        this.flightList = new ArrayList<>();
+
 
     }
 
@@ -105,7 +105,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
+        this.flightList = new ArrayList<String>();
         // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(19.53, -99.72);
 //        MarkerOptions marker = new MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_plane));
@@ -156,7 +156,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                         dialog.dismiss();
                     }
                 });
-        //alertDialog.show();
+       // alertDialog.show();
 
 
         String url = "https://api.flightstats.com/flex/flightstatus/rest/v2/json/flightsNear/"+topLat+"/"+leftLon+"/"+bottomLat+"/"+rightLon+"?appId="+this.AplicationID+"&appKey="+this.AplicationKey+"&maxFlights="+maxFlights;
@@ -188,9 +188,12 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                                     double lat = (double)location.get("lat");
                                     double lon = (double)location.get("lon");
 
+                                    if (!isInlista(idFlight)){
 
-                                    MapsActivity.flightList.add(idFlight);
-                                    mMap.addMarker(planeMarker(lat,lon,idFlight));
+                                        addLista(idFlight);
+                                        mMap.addMarker(planeMarker(lat,lon,idFlight));
+                                    }
+
 
 
                                     lista+=jsonObjectFlight.get("flightId").toString()+"\n";
@@ -248,6 +251,21 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         //todo mMap.addMarker(planeMarker());
 
 
+    }
+
+    public void addLista(String dato){
+        this.flightList.add(dato);
+    }
+
+    public boolean isInlista(String dato){
+        boolean result = false;
+        for (int i =0; i<flightList.size(); i++){
+            if(flightList.get(i).equals(dato)){
+                result=true;
+            }
+        }
+
+        return result;
     }
 
     public void showToolbar(String tittle, boolean upButton){
