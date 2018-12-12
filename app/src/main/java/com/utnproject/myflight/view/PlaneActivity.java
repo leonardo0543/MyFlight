@@ -117,7 +117,8 @@ public class PlaneActivity extends AppCompatActivity {
         longitudeValue = findViewById(R.id.longitudeValue);
 
 
-        getFlighDataTrack(getFlightID());
+        getFlighDataTrack(getFlightID()); //consulta Flight track (by flight ID)
+        getFlightDataStatus(getFlightID()); // Flight status (by flight ID)
 
     }
 
@@ -134,8 +135,6 @@ public class PlaneActivity extends AppCompatActivity {
 
 
     public void getFlighDataTrack(String flightID) {
-
-
         String url = "https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/track/" + flightID + "?appId=" + AplicationID + "&appKey=" + AplicationKey + "&includeFlightPlan=false&maxPositions=1";
 
         // Instantiate the RequestQueue.
@@ -186,32 +185,19 @@ public class PlaneActivity extends AppCompatActivity {
                             setLatitudeValue(navigationData.get("lat").toString());
                             setLongitudeValue(navigationData.get("lon").toString());
 
+//                            //just an alert
+//                            AlertDialog alertDialog = new AlertDialog.Builder(PlaneActivity.this).create();
+//                            alertDialog.setTitle("Bounds");
+//                            alertDialog.setMessage(flightTrackObj.toString());
+//                            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+//                                    new DialogInterface.OnClickListener() {
+//                                        public void onClick(DialogInterface dialog, int which) {
+//                                            dialog.dismiss();
+//                                        }
+//                                    });
+//                            alertDialog.show();
 
-                            //just an alert
-                            AlertDialog alertDialog = new AlertDialog.Builder(PlaneActivity.this).create();
-                            alertDialog.setTitle("Bounds");
-                            alertDialog.setMessage(flightTrackObj.toString());
-                            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                                    new DialogInterface.OnClickListener() {
-                                        public void onClick(DialogInterface dialog, int which) {
-                                            dialog.dismiss();
-                                        }
-                                    });
-                            alertDialog.show();
 
-//                            for (int i = 0; i < jsonArray.length(); i++)
-//                            {
-//                                try {
-//                                    JSONObject jsonObjectAirport = jsonArray.getJSONObject(i);
-//
-//
-//
-//
-//
-//                                } catch (JSONException e) {
-//                                    Log.e("Parser JSON", e.toString());
-//                                }
-//                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -238,6 +224,74 @@ public class PlaneActivity extends AppCompatActivity {
 
 // Add the request to the RequestQueue.
         queue.add(stringRequest);
+
+
+    }
+
+
+    public void getFlightDataStatus(String flightID){
+        String url ="https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/"+flightID+"?appId="+AplicationID+"&appKey="+AplicationKey;
+
+        // Instantiate the RequestQueue.
+        RequestQueue queue = Volley.newRequestQueue(this);
+
+// Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        try {
+                            JSONObject jsonjObject = new JSONObject(response);
+
+                            JSONObject flightStatusObj = jsonjObject.getJSONObject("flightStatus");
+                            JSONObject departureDateObj = flightStatusObj.getJSONObject("departureDate");
+                            JSONObject arrivalDateObj = flightStatusObj.getJSONObject("arrivalDate");
+
+                            setDepartureDate(departureDateObj.get("dateLocal").toString());
+                            setArrivalDate(arrivalDateObj.get("dateLocal").toString());
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+//                        //just an alert
+//                        AlertDialog alertDialog = new AlertDialog.Builder(MapsActivity.this).create();
+//                        alertDialog.setTitle("Bounds");
+//                        alertDialog.setMessage(lista);
+//                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+//                                new DialogInterface.OnClickListener() {
+//                                    public void onClick(DialogInterface dialog, int which) {
+//                                        dialog.dismiss();
+//                                    }
+//                                });
+//                        //alertDialog.show();
+                        // Display the first 500 characters of the response string.
+
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                //just an alert
+                AlertDialog alertDialog = new AlertDialog.Builder(PlaneActivity.this).create();
+                alertDialog.setTitle("Bounds");
+                alertDialog.setMessage(error.toString());
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                alertDialog.show();
+
+            }
+        });
+
+// Add the request to the RequestQueue.
+        queue.add(stringRequest);
+
+
 
 
     }
