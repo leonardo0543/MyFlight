@@ -15,5 +15,17 @@
     <string name="login_error">something happens</string>
     <string name="menu_signout">Sign Out</string>
     <string name="toolbar_tittle_home">Home</string>
+    <string name="title_activity_plane">PlaneActivity</string>
+    <string name="flight_number">Flight Number</string>
+    <string name="type_flight">Type:</string>
+    <string name="city_tittle_origin">City</string>
+    <string name="airport_tittle_origin">Airport</string>
+    <string name="DepartureTittle">Departure</string>
+    <string name="ArrivalTittle">Arrival</string>
+    <string name="speed_tittle">Speed Mph</string>
+    <string name="altitudTittle">Altitude ft</string>
+    <string name="latitudeTittle">Latitude</string>
+    <string name="longitudeTittle">Longitude</string>
+    <string name="toolbar_tittle_flight_information">Flight Information</string>
 
 </resources>

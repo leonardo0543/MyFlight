@@ -9,7 +9,7 @@
          location permissions for the 'MyLocation' functionality. 
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".MyflightApplication"
@@ -51,8 +51,16 @@
         <activity
             android:name=".view.MapsActivity"
             android:label="@string/title_activity_maps"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".view.PlaneActivity"
+            android:label="@string/title_activity_plane"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.MapsActivity" />
 
+        </activity>
     </application>
 
 </manifest>

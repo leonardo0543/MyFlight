@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.PlaneActivity">
+
+    <include layout="@layout/actionbar_toolbar"/>
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_vertical_margin"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:orientation="horizontal"
+
+                >
+
+                <TextView
+                    android:id="@+id/flightTittle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/flight_number"
+                    android:textColor="@android:color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+
+                    />
+
+                <TextView
+                    android:id="@+id/flightNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/flightTittle"
+                    android:paddingHorizontal="@dimen/padding_create_button"
+                    android:text=""
+                    android:textColor="@android:color/black"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/type_flight_tittle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/type_flight"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/textsize_donthaveaccount"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/type_of_plane"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/type_flight_tittle"
+                    android:paddingHorizontal="@dimen/padding_create_button"
+                    android:text="Boeing 717"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/textsize_donthaveaccount" />
+
+                <TextView
+                    android:id="@+id/airline_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/type_of_plane"
+                    android:paddingHorizontal="@dimen/padding_create_button"
+                    android:text="Delta Air Lines"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/textsize_donthaveaccount" />
+            </LinearLayout>
+
+
+
+            <!-- ...........  FROM      -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:gravity="start"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FROM"
+                    android:textColor="@android:color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- ...........  City, airport, departure date      -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/CityTittleOrigin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/city_tittle_origin"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textsize_donthaveaccount"
+                        android:textStyle="bold"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/CityNameOrigin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/CityTittleOrigin"
+                        android:paddingHorizontal="@dimen/padding_create_button"
+                        android:text="Seattle"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textsize_donthaveaccount" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/airportTittleOrigin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/airport_tittle_origin"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textsize_donthaveaccount"
+                        android:textStyle="bold"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/airportNameOrigin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/airportTittleOrigin"
+                        android:paddingHorizontal="@dimen/padding_create_button"
+                        android:text="Seattle-Tacoma International Airport"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textsize_donthaveaccount" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/departureDateTittle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/DepartureTittle"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textsize_donthaveaccount"
+                        android:textStyle="bold"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/departureDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/departureDateTittle"
+                        android:paddingHorizontal="@dimen/padding_create_button"
+                        android:text="2018-12-11T23:30:00.000"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textsize_donthaveaccount" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <!-- ..........................................................................     -->
+
+
+
+
+            <!-- ...........  TO ............................................................  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:gravity="start"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TO"
+                    android:textColor="@android:color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- ...........  City, airport, departure date      -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/CityTittleArrival"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/city_tittle_origin"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textsize_donthaveaccount"
+                        android:textStyle="bold"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/CityNameArrival"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/CityTittleArrival"
+                        android:paddingHorizontal="@dimen/padding_create_button"
+                        android:text="Seoul"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textsize_donthaveaccount" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/airportTittleArrival"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/airport_tittle_origin"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textsize_donthaveaccount"
+                        android:textStyle="bold"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/airportNameArrival"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/airportTittleArrival"
+                        android:paddingHorizontal="@dimen/padding_create_button"
+                        android:text="Seattle-Tacoma International Airport"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textsize_donthaveaccount" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/arrivalDateTittle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ArrivalTittle"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textsize_donthaveaccount"
+                        android:textStyle="bold"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/arrivalDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/arrivalDateTittle"
+                        android:paddingHorizontal="@dimen/padding_create_button"
+                        android:text="2018-12-11T23:30:00.000"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textsize_donthaveaccount" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <!-- ..........................................................................     -->
+
+            <!-- ...........  Other DATA ............................................................  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NAVIGATION DATA"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/textsize_donthaveaccount"
+                    />
+            </LinearLayout>
+
+            <!-- ........... speed, altitud, latitud, longitud      -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/speedTittle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/speed_tittle"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textsize_donthaveaccount"
+                        android:textStyle="bold"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/speedValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/speedTittle"
+                        android:paddingHorizontal="@dimen/padding_create_button"
+                        android:text="500"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textsize_donthaveaccount" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/altitudTittle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/altitudTittle"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textsize_donthaveaccount"
+                        android:textStyle="bold"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/altitudValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/altitudTittle"
+                        android:paddingHorizontal="@dimen/padding_create_button"
+                        android:text="31000"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textsize_donthaveaccount" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/latitudeTittle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/latitudeTittle"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textsize_donthaveaccount"
+                        android:textStyle="bold"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/latitudeValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/latitudeTittle"
+                        android:paddingHorizontal="@dimen/padding_create_button"
+                        android:text="39.8966"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textsize_donthaveaccount" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/longitudeTittle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/longitudeTittle"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textsize_donthaveaccount"
+                        android:textStyle="bold"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/longitudeValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/longitudeTittle"
+                        android:paddingHorizontal="@dimen/padding_create_button"
+                        android:text="-122.9821"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textsize_donthaveaccount" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</android.support.design.widget.CoordinatorLayout>

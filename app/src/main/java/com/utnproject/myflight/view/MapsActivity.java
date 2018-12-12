@@ -120,7 +120,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-                return false;
+                goPlane(marker.getTitle().toString());
+                return true;
             }
         });
 
@@ -134,7 +135,12 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     }
 
+    public void goPlane(String flightID){
+        Intent intent = new Intent(this, PlaneActivity.class);
+        intent.putExtra("flightID", flightID);
+        startActivity(intent);
 
+    }
 
     public LatLng mapCenter(){
         return mMap.getCameraPosition().target;
