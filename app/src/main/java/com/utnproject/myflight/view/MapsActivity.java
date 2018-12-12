@@ -152,17 +152,17 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         float leftLon = (float) (mapCenter().longitude-2.5);
         float rightLon = (float) (mapCenter().longitude+2.5);
 
-        //just an alert
-        AlertDialog alertDialog = new AlertDialog.Builder(MapsActivity.this).create();
-        alertDialog.setTitle("Bounds");
-        alertDialog.setMessage("TopLat: "+topLat+ "\n"+"BottomLat: "+bottomLat+ "\n"+"LefLon: "+leftLon+ "\n"+"RightLon: "+rightLon+ "\n");
-        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-       // alertDialog.show();
+//        //just an alert
+//        AlertDialog alertDialog = new AlertDialog.Builder(MapsActivity.this).create();
+//        alertDialog.setTitle("Bounds");
+//        alertDialog.setMessage("TopLat: "+topLat+ "\n"+"BottomLat: "+bottomLat+ "\n"+"LefLon: "+leftLon+ "\n"+"RightLon: "+rightLon+ "\n");
+//        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+//                new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        dialog.dismiss();
+//                    }
+//                });
+//       // alertDialog.show();
 
 
         String url = "https://api.flightstats.com/flex/flightstatus/rest/v2/json/flightsNear/"+topLat+"/"+leftLon+"/"+bottomLat+"/"+rightLon+"?appId="+this.AplicationID+"&appKey="+this.AplicationKey+"&maxFlights="+maxFlights;
@@ -211,17 +211,17 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        //just an alert
-                        AlertDialog alertDialog = new AlertDialog.Builder(MapsActivity.this).create();
-                        alertDialog.setTitle("Bounds");
-                        alertDialog.setMessage(lista);
-                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                                new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        dialog.dismiss();
-                                    }
-                                });
-                        //alertDialog.show();
+//                        //just an alert
+//                        AlertDialog alertDialog = new AlertDialog.Builder(MapsActivity.this).create();
+//                        alertDialog.setTitle("Bounds");
+//                        alertDialog.setMessage(lista);
+//                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+//                                new DialogInterface.OnClickListener() {
+//                                    public void onClick(DialogInterface dialog, int which) {
+//                                        dialog.dismiss();
+//                                    }
+//                                });
+//                        //alertDialog.show();
                         // Display the first 500 characters of the response string.
 
 
@@ -247,14 +247,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 // Add the request to the RequestQueue.
         queue.add(stringRequest);
 
-
-
-        //todo API request HERE
-
-
-
-
-        //todo mMap.addMarker(planeMarker());
 
 
     }

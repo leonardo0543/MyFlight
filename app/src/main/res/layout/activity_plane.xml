@@ -384,7 +384,7 @@
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@id/altitudTittle"
                         android:paddingHorizontal="@dimen/padding_create_button"
-                        android:text="31000"
+                        android:text="----"
                         android:textColor="@android:color/black"
                         android:textSize="@dimen/textsize_donthaveaccount" />
 
